@@ -25,6 +25,7 @@
   },
   "homepage": "https://github.com/berkan-ozgur/PCAT#readme",
   "dependencies": {
+    "ejs": "^3.1.8",
     "express": "^4.18.2"
   },
   "devDependencies": {
