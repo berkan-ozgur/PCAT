@@ -1,0 +1,33 @@
+{
+  "name": "pcat",
+  "version": "1.0.0",
+  "description": "PCAT Photo Application",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/berkan-ozgur/PCAT.git"
+  },
+  "keywords": [
+    "photo",
+    "app",
+    "camera",
+    "upload",
+    "delete"
+  ],
+  "author": "Berkan Özgür",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/berkan-ozgur/PCAT/issues"
+  },
+  "homepage": "https://github.com/berkan-ozgur/PCAT#readme",
+  "dependencies": {
+    "express": "^4.18.2"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.20"
+  }
+}
