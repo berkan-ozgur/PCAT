@@ -1,0 +1,96 @@
+<%- include('partials/_header')-%>
+	<!--
+
+TemplateMo 552 Video Catalog
+
+https://templatemo.com/tm-552-video-catalog
+
+-->
+
+	<body>
+		<div class="tm-page-wrap mx-auto">
+			<div class="position-relative">
+				<div class="potition-absolute tm-site-header">
+					<div class="container-fluid position-relative">
+						<div class="row">
+							<%- include('partials/_navigation')-%>
+						</div>
+					</div>
+				</div>
+				<div class="tm-welcome-container tm-fixed-header tm-fixed-header-1">
+					<div class="text-center">
+						<p class="pt-5 px-3 tm-welcome-text tm-welcome-text-2 mb-1 text-white mx-auto">Background image
+							can
+							be fixed. Content will simply slide over.</p>
+					</div>
+				</div>
+
+				<!-- Header image -->
+				<div id="tm-fixed-header-bg"></div>
+			</div>
+
+			<!-- Page content -->
+			<div class="container">
+				<div class="tm-content-container">
+					<main>
+						<div class="row">
+							<div class="col-12">
+								<img src="<%= photo.image %>" alt="Image" class="img-fluid">
+							</div>
+							<div class="row mb-5 mt-5">
+								<div class="col-xl-8 col-lg-7">
+									<!-- Video description -->
+									<div class="tm-video-description-box">
+										<h2 class="mb-5 tm-video-title">
+											<%= photo.title %>
+										</h2>
+										<p class="mb-4">
+											<%= photo.description %>
+										</p>
+									</div>
+								</div>
+								<div class="col-xl-4 col-lg-5">
+									<!-- Share box -->
+									<div class="">
+										<a href="/photos/edit/<%= photo._id %>"
+											class="btn mb-4 tm-text-primary tm-likes-box tm-liked"
+											style="background-color: rgb(75, 75, 216); color:white">
+											Update Details
+										</a>
+										<div>
+											<a href="/photos/<%= photo._id %>?_method=DELETE" class="btn mb-4"
+												style="background-color: red; width:280px; color:white;"
+												onclick="return confirm('Are you sure that you want to delete the photo?')">
+
+												<span>Delete Photo</span></a>
+										</div>
+									</div>
+								</div>
+							</div>
+					</main>
+
+					<!-- Subscribe form and footer links -->
+					<%- include('partials/_footer')-%>
+				</div> <!-- .tm-content-container -->
+			</div>
+		</div>
+
+		<script src="js/jquery-3.4.1.min.js"></script>
+		<script src="js/bootstrap.min.js"></script>
+		<script>
+			$(document).ready(function () {
+				$('.tm-likes-box').click(function (e) {
+					e.preventDefault();
+					$(this).toggleClass('tm-liked');
+
+					if ($(this).hasClass('tm-liked')) {
+						$('#tm-likes-count').html('486 likes');
+					} else {
+						$('#tm-likes-count').html('485 likes');
+					}
+				});
+			});
+		</script>
+	</body>
+
+	</html>

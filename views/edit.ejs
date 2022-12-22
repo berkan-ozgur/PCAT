@@ -29,7 +29,7 @@ https://templatemo.com/tm-552-video-catalog
                         <div class="row mt-3 mb-5 pb-3">
                             <div class="col-12">
                                 <div class="mx-auto tm-about-text-container px-3">
-                                    <h2 class="tm-page-title mb-4 tm-text-primary">Add New Photo</h2>
+                                    <h2 class="tm-page-title mb-4 tm-text-primary">Edit The Photo</h2>
                                     <p class="mb-4">
                                         Integer sit amet odio id libero tincidunt dignissim in eget arcu. Aliquam
                                         tristique ut magna sit amet tincidunt. Sed tempor tellus nulla, molestie luctus
@@ -42,19 +42,16 @@ https://templatemo.com/tm-552-video-catalog
                         <div class="mx-auto pb-3 tm-about-text-container px-3">
                             <div class="row">
                                 <div class="d-flex justify-content-center col-lg-12 mb-5 col-sm">
-                                    <form method="post" action="/photos" class="tm-contact-form"
-                                        enctype="multipart/form-data">
+                                    <form method="post" action="/photos/<%= photo._id %>?_method=PUT"
+                                        class="tm-contact-form" enctype="multipart/form-data">
                                         <div class="form-group">
                                             <input type="text" style="width: 400px" name="title"
-                                                class="form-control rounded-0" placeholder="Photo Title" />
+                                                value="<%= photo.title %>" class="form-control rounded-0"
+                                                placeholder="Photo Title" />
                                         </div>
                                         <div class="form-group">
                                             <textarea rows="8" name="description" class="form-control rounded-0"
-                                                placeholder="Photo Description"></textarea>
-                                        </div>
-
-                                        <div class="form-group">
-                                            <input type="file" name="image" class="form-control-file rounded-0">
+                                                placeholder="Photo Description"><%= photo.description %></textarea>
                                         </div>
                                         <div class="form-group mb-0">
                                             <button type="submit"
